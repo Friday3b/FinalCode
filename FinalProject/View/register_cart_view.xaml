@@ -1,0 +1,153 @@
+﻿<Page x:Class="FinalProject.View.register_cart_view"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FinalProject.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="1000"
+      Title="register_cart_view">
+
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+
+
+        <Grid Grid.Row="0" Background="CornflowerBlue" Margin="30 30 30 30" Grid.ColumnSpan="2">
+
+            <TextBlock Text="StepApp" FontSize="130"  Foreground="White"  FontWeight="UltraLight"  Margin="220,10,0,-10" ></TextBlock>
+
+        </Grid>
+
+
+        <Grid Grid.Row="1">
+
+            <StackPanel>
+
+                <Grid>
+                    <TextBlock x:Name="PlaceholderFinText" 
+                         Text="XXXX-XXXX-XXXX-XXXX" 
+                         FontSize="35"
+                         Foreground="Gray" 
+                         VerticalAlignment="Top" 
+                         HorizontalAlignment="Center"
+                         IsHitTestVisible="False"
+                         Margin="10,10,0,0" Width="500" 
+                         Panel.ZIndex="1" 
+                         Visibility="Visible" />
+
+                    <TextBox Height="50" Width="750" 
+                         Name="FinTextBox"
+                         FontSize="35"
+                         BorderBrush="Blue" 
+                         HorizontalAlignment="Right" 
+                         GotFocus="TextBox_GotFocus"
+                         LostFocus="TextBox_LostFocus" Visibility="Visible" 
+                         TextChanged="TextBox_TextChanged"
+                         Tag="{Binding ElementName=PlaceholderFinText}">
+
+                    </TextBox>
+
+                </Grid>
+
+
+
+
+                <Grid>
+
+                    <TextBlock x:Name="PlaceholderExpireText" 
+                          Text="Expire Data" 
+                          FontSize="35"
+                          Foreground="Gray" 
+                          VerticalAlignment="Center" 
+                          HorizontalAlignment="Right"
+                          IsHitTestVisible="False"
+                          Margin="10,10,0,0" Width="550" 
+                          Panel.ZIndex="1" 
+                          Visibility="Visible" />
+
+
+
+
+                    <TextBox Height="50" Width="550" 
+                         Name="ExpireTextBox"
+                         FontSize="35"
+                         Margin="0 20 0 0" BorderBrush="Blue" 
+                         HorizontalAlignment="Right" 
+                         GotFocus="TextBox_GotFocus"
+                         LostFocus="TextBox_LostFocus" Visibility="Visible" 
+                         TextChanged="TextBox_TextChanged"
+                         Tag="{Binding ElementName=PlaceholderExpireText}">
+
+                    </TextBox>
+
+                </Grid>
+
+
+
+                <Grid>
+
+
+                    <TextBlock x:Name="PlaceholderCVCText" 
+                        Text="CVC" 
+                        FontSize="35"
+                        Foreground="Gray" 
+                        VerticalAlignment="Center" 
+                        HorizontalAlignment="Right"
+                        IsHitTestVisible="False"
+                        Margin="10,10,0,0" Width="350" 
+                        Panel.ZIndex="1" 
+                        Visibility="Visible" />
+
+
+
+
+
+
+
+
+                    <TextBox Height="50" Width="350"
+                         Name="CVCTextBox"
+                         FontSize="35"
+                         Margin="0 20 0 0" BorderBrush="Blue" 
+                         HorizontalAlignment="Right"
+                         GotFocus="TextBox_GotFocus"
+                         LostFocus="TextBox_LostFocus" Visibility="Visible" 
+                         TextChanged="TextBox_TextChanged"
+                         Tag="{Binding ElementName=PlaceholderCVCText}"
+                    ></TextBox>
+
+
+                </Grid>
+
+
+            </StackPanel>
+
+
+
+        </Grid>
+
+
+
+
+        <Grid Grid.Row="2">
+
+            <Button Width="150" Background="CornflowerBlue" Content="Save" FontSize="35" FontWeight="UltraLight" HorizontalAlignment="Right" Margin="0 20 30 0" Click="Save_button" Height="51" VerticalAlignment="Top"/>
+
+            <Button Height="50" Background="CornflowerBlue" Content="back" FontSize="35" FontWeight="UltraLight" HorizontalAlignment="Left" Width="150" Margin="0 0 250 0" Click="BackButton_Click">
+
+            </Button>
+
+        </Grid>
+
+
+
+
+    </Grid>
+</Page>

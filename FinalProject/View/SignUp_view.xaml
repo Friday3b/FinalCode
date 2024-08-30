@@ -1,0 +1,246 @@
+﻿<Page x:Class="FinalProject.View.SignUp_view"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FinalProject.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="1000"
+      Title="SignUp_view">
+
+
+
+
+
+
+    <Grid Background="White">
+
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+
+
+        <Grid Grid.Row="0" Background="CornflowerBlue" Margin="30 30 30 30">
+
+            <TextBlock Text="StepApp" FontSize="130"  Foreground="White"  FontWeight="UltraLight"  Margin="220,10,0,-10" ></TextBlock>
+
+        </Grid>
+
+
+        <Grid Grid.Row="1" Grid.RowSpan="2">
+
+            <StackPanel Grid.RowSpan="2">
+
+                <Grid Grid.RowSpan="2">
+
+                    <TextBlock x:Name="PlaceholderNameText" 
+                               FocusManager.FocusedElement="{x:Null}"
+                               Text="Name" 
+                               FontSize="15"
+                               Foreground="Gray" 
+                               VerticalAlignment="Top" 
+                               HorizontalAlignment="Center"
+                               IsHitTestVisible="False"
+                               Margin="10,10,0,0" Width="500" 
+                                       Panel.ZIndex="1" 
+                                       Visibility="Visible"
+                               
+                               
+                    ></TextBlock>
+
+
+                    <TextBox x:Name="NameTextBox" 
+                             HorizontalAlignment="Center" 
+                             Height="30" 
+                             Width="500" 
+                             FontSize="15"  
+                             Margin="0,10,0,0" 
+                             BorderBrush="Blue" 
+                             BorderThickness="2"
+                             GotFocus="TextBox_GotFocus"
+                             LostFocus="TextBox_LostFocus" Visibility="Visible" 
+                             TextChanged="TextBox_TextChanged"
+                             Tag="{Binding ElementName=PlaceholderNameText}" 
+                    />
+
+
+                </Grid>
+
+
+
+                <!-- Surname -->
+                <Grid Margin="0,10,0,0">
+                    <TextBlock x:Name="PlaceholderSurnameText" 
+                               Text="Surname" 
+                               FontSize="15"
+                               Foreground="Gray" 
+                               VerticalAlignment="Top" 
+                               HorizontalAlignment="Center"
+                               IsHitTestVisible="False"
+                               Margin="10,10,0,0" Width="500" 
+                               Panel.ZIndex="1" 
+                               Visibility="Visible" />
+                    <TextBox x:Name="SurnameTextBox" 
+                             HorizontalAlignment="Center" 
+                             Height="30" 
+                             Width="500" 
+                             FontSize="15"  
+                             Margin="0,10,0,0" 
+                             BorderBrush="Blue" 
+                             BorderThickness="2"
+                             GotFocus="TextBox_GotFocus"
+                             LostFocus="TextBox_LostFocus" 
+                             TextChanged="TextBox_TextChanged" 
+                             Tag="{Binding ElementName=PlaceholderSurnameText}"/>
+                </Grid>
+
+
+
+
+                
+
+
+                <!--Birthday-->
+
+                <Grid Margin="0,10,0,0">
+                    <TextBlock Text="Date of Birth" FontSize="15" Foreground="Gray" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Width="500" />
+                    <DatePicker HorizontalAlignment="Center" Width="500" Height="30" FontSize="15" Margin="0,10,0,0" BorderBrush="Blue"  BorderThickness="2" SelectedDate="{Binding DateOfBirth , Mode=TwoWay }" Name="DataPicker" />
+                </Grid>
+
+
+                <!--Gender-->
+
+                <Grid Margin="0,10,0,0">
+                    <TextBlock Text="Gender" FontSize="15" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Width="500" FontWeight="Medium"/>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                        <RadioButton x:Name="MaleRadioButton" Content="Male" GroupName="Gender" FontSize="15" Margin="10,0" />
+                        <RadioButton x:Name="FemaleRadioButton" Content="Female" GroupName="Gender" FontSize="15" Margin="10,0" />
+                        <RadioButton x:Name="OtherRadioButton" Content="Other" GroupName="Gender" FontSize="15" Margin="10,0" />
+                    </StackPanel>
+                </Grid>
+
+
+
+
+                <!--Email -->
+                <Grid Margin="0,10,0,0">
+                    <TextBlock x:Name="PlaceholderEmailText" 
+                               Text="Email" 
+                               FontSize="15"
+                               Foreground="Gray" 
+                               VerticalAlignment="Top" 
+                               HorizontalAlignment="Center"
+                               IsHitTestVisible="False"
+                               Margin="10,10,0,0" Width="500" 
+                               Panel.ZIndex="1" 
+                               Visibility="Visible" />
+                    <TextBox x:Name="EmailTextBox" 
+                             HorizontalAlignment="Center" 
+                             Height="30" 
+                             Width="500" 
+                             FontSize="15"  
+                             Margin="0,10,0,0" 
+                             BorderBrush="Blue" 
+                             BorderThickness="2"
+                             GotFocus="TextBox_GotFocus"
+                             LostFocus="TextBox_LostFocus" 
+                             TextChanged="TextBox_TextChanged" 
+                             Tag="{Binding ElementName=PlaceholderEmailText}"/>
+                </Grid>
+
+
+
+
+
+                <!--Password -->
+                <Grid Margin="0,10,0,0">
+                    <TextBlock x:Name="PlaceholderPasswordText" 
+                               Text="Password" 
+                               FontSize="15"
+                               Foreground="Gray" 
+                               VerticalAlignment="Top" 
+                               HorizontalAlignment="Center"
+                               IsHitTestVisible="False"
+                               Margin="10,10,0,0" Width="500" 
+                               Panel.ZIndex="1" 
+                               Visibility="Visible" />
+                    <TextBox x:Name="PasswordTextBox" 
+                             HorizontalAlignment="Center" 
+                             Height="30" 
+                             Width="500" 
+                             FontSize="15"  
+                             Margin="0,10,0,0" 
+                             BorderBrush="Blue" 
+                             BorderThickness="2"
+                             GotFocus="TextBox_GotFocus"
+                             LostFocus="TextBox_LostFocus" 
+                             TextChanged="TextBox_TextChanged" 
+                             Tag="{Binding ElementName=PlaceholderPasswordText}"/>
+                </Grid>
+
+
+
+
+                <!--Confirm Password -->
+                <Grid Margin="0,10,0,0">
+                    <TextBlock x:Name="PlaceholderConfirmPasswordText" 
+                               Text="ConfirmPassword" 
+                               FontSize="15"
+                               Foreground="Gray" 
+                               VerticalAlignment="Top" 
+                               HorizontalAlignment="Center"
+                               IsHitTestVisible="False"
+                               Margin="10,10,0,0" Width="500" 
+                               Panel.ZIndex="1" 
+                               Visibility="Visible" />
+                    <TextBox x:Name="ConfirmPasswordTextBox" 
+                             HorizontalAlignment="Center" 
+                             Height="30" 
+                             Width="500" 
+                             FontSize="15"  
+                             Margin="0,10,0,0" 
+                             BorderBrush="Blue" 
+                             BorderThickness="2"
+                             GotFocus="TextBox_GotFocus"
+                             LostFocus="TextBox_LostFocus" 
+                             TextChanged="TextBox_TextChanged" 
+                             Tag="{Binding ElementName=PlaceholderConfirmPasswordText}"/>
+                </Grid>
+
+
+                <Grid Grid.Row="3" VerticalAlignment="Top">
+
+                    <StackPanel>
+                        <Button Height="50" Background="CornflowerBlue" Content="Sign Up" FontSize="35" FontWeight="UltraLight" HorizontalAlignment="Center" Width="500" Margin="0 20 0 0" Click="signup_Click">
+
+                        </Button>
+
+                        <Button Height="50" Background="CornflowerBlue" Content="back" FontSize="35" FontWeight="UltraLight" HorizontalAlignment="Left" Width="150" Margin="0 0 250 0" Click="BackButton_Click">
+
+                        </Button>
+
+                    </StackPanel>
+
+
+
+                </Grid>
+
+
+
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+
+
+
+
+</Page>

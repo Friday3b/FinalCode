@@ -1,0 +1,135 @@
+﻿<Page x:Class="FinalProject.View.myprofile_view"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FinalProject.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="1000"
+      Title="myprofile_view">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0" Background="CornflowerBlue" Margin="30 30 30 30">
+
+            <TextBlock Text="StepApp" FontSize="130"  Foreground="White"  FontWeight="UltraLight"  Margin="220,10,0,-10" ></TextBlock>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <StackPanel>
+
+                <Grid>
+                    
+                    <TextBlock x:Name="PlaceholderEmailText" 
+                       FocusManager.FocusedElement="{x:Null}"
+                       Text="Email" 
+                       FontSize="35"
+                       Foreground="Gray" 
+                       VerticalAlignment="Top" 
+                       HorizontalAlignment="Center"
+                       IsHitTestVisible="False"
+                       Margin="0,52,0,0" Width="500" 
+                               Panel.ZIndex="1" 
+                               Visibility="Visible"
+                       />
+
+                    
+                    <TextBox x:Name="EmailTextBox" 
+                     HorizontalAlignment="Center" 
+                     Height="50" 
+                     Width="500" 
+                     FontSize="35"  
+                     Margin="0 50 0 20" 
+                     BorderBrush="Blue" 
+                     BorderThickness="2"
+                     GotFocus="TextBox_GotFocus"
+                     LostFocus="TextBox_LostFocus" Visibility="Visible" 
+                     TextChanged="TextBox_TextChanged"
+                     Tag="{Binding ElementName=PlaceholderEmailText}"/>
+                    
+                    
+                </Grid>
+
+
+            </StackPanel>
+
+
+        </Grid>
+
+
+
+        <Grid Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 0 40">
+            <StackPanel>
+                <!--Password -->
+                <Grid Margin="0,10,0,0">
+                    <TextBlock x:Name="PlaceholderPasswordText" 
+                               Text="Password" 
+                               FontSize="35"
+                               Foreground="Gray" 
+                               VerticalAlignment="Top" 
+                               HorizontalAlignment="Center"
+                               IsHitTestVisible="False"
+                               Margin="10,10,0,0" Width="500" 
+                               Panel.ZIndex="1" 
+                               Visibility="Visible" />
+                    <PasswordBox x:Name="PasswordTextBox" 
+                             HorizontalAlignment="Center" 
+                             Height="50" 
+                             Width="500" 
+                             FontSize="35"  
+                             Margin="0,10,0,0" 
+                             BorderBrush="Blue" 
+                             BorderThickness="2"
+                             GotFocus="TextBox_GotFocus"
+                             LostFocus="TextBox_LostFocus" 
+                             PasswordChanged="PasswordBox_PasswordChanged" 
+                             Tag="{Binding ElementName=PlaceholderPasswordText}"/>
+                </Grid>
+
+
+
+
+
+
+            </StackPanel>
+
+
+        </Grid>
+
+
+        <Grid Grid.Row="3" VerticalAlignment="Top">
+
+            <StackPanel>
+                <Button Height="50" Background="CornflowerBlue" Content="Sign in" FontSize="35" FontWeight="UltraLight" HorizontalAlignment="Center" Width="500" Click="signin_click" IsDefault="True">
+                
+                </Button>
+
+
+                <Button Height="50" Background="CornflowerBlue" Content="Sign up" FontSize="35" FontWeight="UltraLight" HorizontalAlignment="Right" Width="150" Margin="0 80 250 0" Click="signup_click">
+
+                </Button>
+
+
+                <Button Height="50" Background="CornflowerBlue" Content="back" FontSize="35" FontWeight="UltraLight" HorizontalAlignment="Left" Width="150" Margin="0 0 250 0" Click="BackButton_Click">
+
+                </Button>
+
+
+
+            </StackPanel>
+
+
+
+        </Grid>
+
+
+    </Grid>
+</Page>
